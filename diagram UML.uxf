@@ -6,34 +6,92 @@
     <coordinates>
       <x>20</x>
       <y>70</y>
-      <w>240</w>
-      <h>220</h>
+      <w>230</w>
+      <h>210</h>
     </coordinates>
-    <panel_attributes>KsiazkaADresowa
+    <panel_attributes>KsiazkaAdresowa
 --
-idZalogowanegoUzytkownika: int
-idOstatniegoAdresata: int
-idUsunietegoAdresata: int
+- uzytkownikMendzer: UzytkownikMenadzer 
 --
-rejestracjaUzytkownik(): void
-logowanieUzytkownika(): int</panel_attributes>
++ rejestracjaUzytkownika(): void;
++ wypiszWszystkichUzytkownikow(): void;
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>340</y>
+      <x>20</x>
+      <y>310</y>
       <w>170</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 --
-id: int
-login: string
-haslo: string
+- id: int
+- login: string
+- haslo: string
 --
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>310</y>
+      <w>320</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenadzer
+--
+- idZalogowanegoUzytkownika: int
+- uzytkownicy: vector&lt;Uzytkownik&gt;
+--
++ rejestracjaUzytkownika(): void
++ wypiszWszystkichUzytkownikow(): void
++ logowanieUzytkownika(): int
+- podajDaneNowegoUzytkownika(): Uzytkownik 
++ pobierzIdNowegoUzytkownika(): int 
+- czyIstniejeLogin(): bool
++ wypiszWszystkichUzytkownikow(): void 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>60</y>
+      <w>240</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+- nazwaPlikuZUzytkownikami: string
+- plikTekstowy: fstream
+--
++ PlikZUzytkownikami()
++ dopiszUzytkownikaDoPliku(): void
+- czyPlikJestPusty(): bool  
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>60</y>
+      <w>220</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
+
+--
+- konwerjsaIntNaString(): string </panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
