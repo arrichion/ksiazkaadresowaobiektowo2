@@ -23,7 +23,7 @@ class UzytkownikMenadzer{
     bool czyIstniejeLogin(string login);
 
 public:
-    //UzytkownikMenadzer();
+    UzytkownikMenadzer(string nazwPlikuZUzytkownikami): plikZUzytkownikami(nazwPlikuZUzytkownikami){} ;
     void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

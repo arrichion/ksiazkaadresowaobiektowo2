@@ -13,6 +13,7 @@
 --
 - uzytkownikMendzer: UzytkownikMenadzer 
 --
++ KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void;
 + wypiszWszystkichUzytkownikow(): void;
 </panel_attributes>
@@ -51,10 +52,12 @@
 + rejestracjaUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
 + logowanieUzytkownika(): int
-- podajDaneNowegoUzytkownika(): Uzytkownik 
++ wczytajUzytkownikowZPliku(): void
 + pobierzIdNowegoUzytkownika(): int 
++ wypiszWszystkichUzytkownikow(): void
+- podajDaneNowegoUzytkownika(): Uzytkownik 
 - czyIstniejeLogin(): bool
-+ wypiszWszystkichUzytkownikow(): void 
+ 
 </panel_attributes>
     <additional_attributes/>
   </element>
