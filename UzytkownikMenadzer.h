@@ -29,6 +29,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void zapiszWszystkichUzytkownikowDoPliku();
 
 };
 
