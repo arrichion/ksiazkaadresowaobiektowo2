@@ -83,7 +83,8 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    return 1;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -97,5 +98,22 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
 }
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika(){
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    cin >> noweHaslo;
 
+    for(int i=0; i<uzytkownicy.size(); ++i){
+        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
+        {
+            uzytkownicy[i].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    zapiszWszystkichUzytkownikowDoPliku();
 }
+
+void UzytkownikMenadzer::zapiszWszystkichUzytkownikowDoPliku(){
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
