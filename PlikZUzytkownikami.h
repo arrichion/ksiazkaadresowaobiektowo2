@@ -1,4 +1,4 @@
-#ifndef PLIKZZUZYTKOWNIKAMI_H
+#ifndef PLIKZUZYTKOWNIKAMI_H
 #define PLIKZUZYTKOWNIKAMI_H
 
 #include <iostream>
