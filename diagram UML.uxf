@@ -28,29 +28,32 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>70</y>
+      <x>0</x>
+      <y>0</y>
       <w>230</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
 - uzytkownikMendzer: UzytkownikMenadzer 
+- adresatMenadzer: AdrestaMenadzer
 --
 + KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void;
 + logowanieUzytkownika(): int
 + zmianaHaslaZalogowanegoUzytkownika():void
 + wylogowanieUzytkownika(): void
-+ wypiszWszystkichUzytkownikow(): void;
++ wypiszWszystkichUzytkownikow(): void
++ dodajAdresata: int
++ wyswietlWszystkichAdresatow: void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>600</y>
+      <x>0</x>
+      <y>530</y>
       <w>170</w>
       <h>220</h>
     </coordinates>
@@ -68,18 +71,18 @@ fontsize=10
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>330</y>
+      <y>260</y>
       <w>380</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
 - nazwaPlikuZUzytkownikami: string
-- plikTekstowy: fstream
 --
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku(): void
-+zapiszWszystkichUzytkownikowDoPliku(): void
++ zapiszWszystkichUzytkownikowDoPliku(): void
++ wczytajUzytkownikowZPliku(): vectro,Uzytkownik&gt;
 - czyPlikJestPusty(): bool  
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
 
@@ -89,8 +92,8 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>70</y>
+      <x>280</x>
+      <y>0</y>
       <w>220</w>
       <h>220</h>
     </coordinates>
@@ -98,14 +101,18 @@ fontsize=10
 --
 
 --
-- konwerjsaIntNaString(): string </panel_attributes>
++ konwerjsaIntNaString(): string 
++ wczytajLinie(): string
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst): string
++ pobierzLiczbe(string tekst, int pozycjaZnaku): string
++ konwersjaStringNaInt(string liczba): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>330</y>
+      <x>0</x>
+      <y>260</y>
       <w>170</w>
       <h>220</h>
     </coordinates>
@@ -121,8 +128,8 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>330</y>
+      <x>280</x>
+      <y>260</y>
       <w>320</w>
       <h>250</h>
     </coordinates>
@@ -130,18 +137,21 @@ fontsize=10
 --
 - idZalogowanegoUzytkownika: int
 - uzytkownicy: vector&lt;Uzytkownik&gt;
+- plikZUzytkownikami: PlikZUzytkownikami
 --
++ UzytkownikMenadzer();
 + rejestracjaUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
 + logowanieUzytkownika(): int
 + zmianaHaslaZalogowanegoUzytkownika():void
 + wylogowanieUzytkownika(): void
 + wczytajUzytkownikowZPliku(): void
-+ pobierzIdNowegoUzytkownika(): int 
 + wypiszWszystkichUzytkownikow(): void
 + zapiszWszystkichUzytkownikowDoPliku(): void
++ wylogowanieUzytkownika: void
 - podajDaneNowegoUzytkownika(): Uzytkownik 
 - czyIstniejeLogin(): bool
+
  
 </panel_attributes>
     <additional_attributes/>
@@ -149,14 +159,15 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>600</y>
+      <x>280</x>
+      <y>530</y>
       <w>320</w>
       <h>250</h>
     </coordinates>
     <panel_attributes>AdresatMenadzer
 --
 - adresaci: vector&lt;Adresat&gt;
+- plikZAdresatami: PlikZAdresatami
 --
 + dodajAdresata(): int
 + wyswietlDaneAdresata(): void
@@ -167,6 +178,7 @@ fontsize=10
 + pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): int
 + wypiszWszystkichAdresatow(): void
 - podajDaneNowegoAdresata(): Adresat 
+- czyIstniejeLogin(): bool
 
  
 </panel_attributes>
@@ -175,18 +187,18 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>600</y>
+      <x>610</x>
+      <y>530</y>
       <w>380</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
 - nazwaPlikuZAdresatami: string
-- plikTekstowy: fstream
 --
 + PlikZAdresatami()
 + dopiszAdresataDoPliku(): void
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector&lt;Adresat&gt;
 - czyPlikJestPusty(): bool  
 - zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
 
