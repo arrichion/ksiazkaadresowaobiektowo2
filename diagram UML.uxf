@@ -39,6 +39,7 @@ fontsize=10
 --
 + KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void;
++ logowanieUzytkownika(): int
 + zmianaHaslaZalogowanegoUzytkownika():void
 + wylogowanieUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void;
@@ -78,6 +79,7 @@ fontsize=10
 --
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku(): void
++zapiszWszystkichUzytkownikowDoPliku(): void
 - czyPlikJestPusty(): bool  
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
 
@@ -137,6 +139,7 @@ fontsize=10
 + wczytajUzytkownikowZPliku(): void
 + pobierzIdNowegoUzytkownika(): int 
 + wypiszWszystkichUzytkownikow(): void
++ zapiszWszystkichUzytkownikowDoPliku(): void
 - podajDaneNowegoUzytkownika(): Uzytkownik 
 - czyIstniejeLogin(): bool
  
