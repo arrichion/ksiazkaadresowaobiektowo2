@@ -59,8 +59,9 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
     return false;
 }
 
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku(){
+vector <Uzytkownik> UzytkownikMenadzer::wczytajUzytkownikowZPliku(){
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    return uzytkownicy;
 }
 
 int UzytkownikMenadzer::logowanieUzytkownika(){
@@ -84,7 +85,6 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    cout<<endl<<idZalogowanegoUzytkownika;
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -124,6 +124,12 @@ int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(){
 
 void  UzytkownikMenadzer::wylogowanieUzytkownika(){
     idZalogowanegoUzytkownika = 0;
-    //adresaci.clear();
+}
+
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany(){
+    if(idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }
 

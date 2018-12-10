@@ -23,8 +23,11 @@ class UzytkownikMenadzer{
     bool czyIstniejeLogin(string login);
 
 public:
-    UzytkownikMenadzer(string nazwPlikuZUzytkownikami): plikZUzytkownikami(nazwPlikuZUzytkownikami){} ;
-    void wczytajUzytkownikowZPliku();
+    UzytkownikMenadzer(string nazwPlikuZUzytkownikami): plikZUzytkownikami(nazwPlikuZUzytkownikami){
+        uzytkownicy = wczytajUzytkownikowZPliku();
+        idZalogowanegoUzytkownika = 0;
+    } ;
+    vector <Uzytkownik> wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
@@ -32,6 +35,7 @@ public:
     void zapiszWszystkichUzytkownikowDoPliku();
     int pobierzIdZalogowanegoUzytkownika();
     void  wylogowanieUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
 };
 

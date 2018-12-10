@@ -1,14 +1,10 @@
 #include "AdresatMenadzer.h"
 
-/*AdresatMenadzer::AdresatMenadzer(int idZalogowanego){
-    idZalogowanegoUzytkownika = idZalogowanego;
-}*/
-
 Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
 
-    adresat.ustawId(pobierzIdOstatniegoAdresata()+1);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cin.sync();
@@ -41,8 +37,6 @@ int AdresatMenadzer::dodajAdresata(){
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    return ++idOstatniegoAdresata;
 }
 
 void AdresatMenadzer::wyswietlWszystkichAdresatow(){
@@ -61,20 +55,3 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow(){
     }
     system("pause");
 }
-
-int AdresatMenadzer::pobierzIdOstatniegoAdresata()
-{
-    if (adresaci.empty() == true)
-        return 0;
-    else
-        return adresaci.back().pobierzId();
-}
-
-void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(){
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}
-
-void AdresatMenadzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika){
-    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
-}
-

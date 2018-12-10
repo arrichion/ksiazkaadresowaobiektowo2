@@ -37,8 +37,10 @@ fontsize=10
 --
 - uzytkownikMendzer: UzytkownikMenadzer 
 - adresatMenadzer: AdrestaMenadzer
+- nazwaPlikuZAdrestaami: const string
 --
 + KsiazkaAdresowa()
++ ~KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void;
 + logowanieUzytkownika(): int
 + zmianaHaslaZalogowanegoUzytkownika():void
@@ -60,10 +62,14 @@ fontsize=10
     <panel_attributes>Adresat
 --
 - id: int
+- idUzytkownika: int
 - imie: string
 - nazwisko: string
 - adres: string
+- numerTelefonu: string
+- email: string
 --
++ wyswietlDaneAdresata(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -77,7 +83,7 @@ fontsize=10
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- nazwaPlikuZUzytkownikami: string
+- nazwaPlikuZUzytkownikami: const string
 --
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku(): void
@@ -85,7 +91,7 @@ fontsize=10
 + wczytajUzytkownikowZPliku(): vectro,Uzytkownik&gt;
 - czyPlikJestPusty(): bool  
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
-
+- pobierzDaneUzytkownika: Uzytkownik
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -151,6 +157,7 @@ fontsize=10
 + wylogowanieUzytkownika: void
 - podajDaneNowegoUzytkownika(): Uzytkownik 
 - czyIstniejeLogin(): bool
+- pobierzIdNowegoUzytkownika(): int
 
  
 </panel_attributes>
@@ -168,17 +175,12 @@ fontsize=10
 --
 - adresaci: vector&lt;Adresat&gt;
 - plikZAdresatami: PlikZAdresatami
+- idZalogowanegoUzytkownika: const int
 --
 + dodajAdresata(): int
-+ wyswietlDaneAdresata(): void
 + wyswietlWszystkichAdresatow(): void
-+ logowanieUzytkownika(): int
-+ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): int
-+ pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): int
-+ pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): int
-+ wypiszWszystkichAdresatow(): void
 - podajDaneNowegoAdresata(): Adresat 
-- czyIstniejeLogin(): bool
+
 
  
 </panel_attributes>
@@ -187,21 +189,24 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
+      <x>630</x>
       <y>530</y>
       <w>380</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- nazwaPlikuZAdresatami: string
+- nazwaPlikuZAdresatami: const string
 --
 + PlikZAdresatami()
 + dopiszAdresataDoPliku(): void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector&lt;Adresat&gt;
++ pobierzIdOstatniegoAdresata(): int;
 - czyPlikJestPusty(): bool  
 - zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
-
+- pobierzDaneAdresata(): Adresat;
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): int
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): int
 </panel_attributes>
     <additional_attributes/>
   </element>
