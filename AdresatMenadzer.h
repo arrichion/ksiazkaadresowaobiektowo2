@@ -28,8 +28,8 @@ public:
 
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void znajdzAdresataPoImieniu();
-    void znajdzAdresataPoNazwisku();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

@@ -56,7 +56,7 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow(){
     system("pause");
 }
 
-void AdresatMenadzer::znajdzAdresataPoImieniu(){
+void AdresatMenadzer::wyszukajAdresatowPoImieniu(){
     string szukaneImie = "";
     bool znalezionoAdresata = false;
 
@@ -79,7 +79,7 @@ void AdresatMenadzer::znajdzAdresataPoImieniu(){
     system("pause");
 }
 
-void AdresatMenadzer::znajdzAdresataPoNazwisku(){
+void AdresatMenadzer::wyszukajAdresatowPoNazwisku(){
     string szukaneNazwisko = "";
     bool znalezionoAdresata = false;
 

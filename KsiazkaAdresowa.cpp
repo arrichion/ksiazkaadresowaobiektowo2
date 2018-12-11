@@ -37,10 +37,22 @@ void KsiazkaAdresowa::wylogowanieUzytkownika(){
     adresatMenadzer = NULL;
 }
 
-void KsiazkaAdresowa::znajdzAdresataPoImieniu(){
-    adresatMenadzer->znajdzAdresataPoImieniu();
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
+    adresatMenadzer->wyszukajAdresatowPoImieniu();
 }
 
-void KsiazkaAdresowa::znajdzAdresataPoNazwisku(){
-    adresatMenadzer->znajdzAdresataPoNazwisku();
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
+    adresatMenadzer->wyszukajAdresatowPoNazwisku();
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
+    menu.wybierzOpcjeZMenuGlownego();
+}
+
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika(){
+    menu.wybierzOpcjeZMenuUzytkownika();
+}
+
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika(){
+    uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
 }

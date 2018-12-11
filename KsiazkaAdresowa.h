@@ -4,6 +4,7 @@
 #include <iostream>
 #include "UzytkownikMenadzer.h"
 #include "AdresatMenadzer.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ class KsiazkaAdresowa{
 
     UzytkownikMenadzer uzytkownikMenadzer;
     AdresatMenadzer *adresatMenadzer;
+    Menu menu;
     const string nazwaPlikuZAdresatami;
 
 public:
@@ -27,10 +29,12 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void  wylogowanieUzytkownika();
-    void znajdzAdresataPoImieniu();
-    void znajdzAdresataPoNazwisku();
-
+    void wylogowanieUzytkownika();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif
