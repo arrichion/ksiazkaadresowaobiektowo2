@@ -48,6 +48,8 @@ fontsize=10
 + wypiszWszystkichUzytkownikow(): void
 + dodajAdresata: int
 + wyswietlWszystkichAdresatow: void
++ znajdzAdresataPoImieniu(): void
++ znajdzAdresataPoNazwisku(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -179,6 +181,8 @@ fontsize=10
 --
 + dodajAdresata(): int
 + wyswietlWszystkichAdresatow(): void
++ znajdzAdresataPoImieniu(): void
++ znajdzAdresataPoNazwisku(): void
 - podajDaneNowegoAdresata(): Adresat 
 
 

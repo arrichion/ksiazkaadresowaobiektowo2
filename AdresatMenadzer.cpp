@@ -55,3 +55,49 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow(){
     }
     system("pause");
 }
+
+void AdresatMenadzer::znajdzAdresataPoImieniu(){
+    string szukaneImie = "";
+    bool znalezionoAdresata = false;
+
+    system("cls");
+    cout << " >>> WYSZUKIWANIE ADRESATA PO IMIENIU <<<" << endl << endl;
+    cout << "Wprowadz wyszukiwane imie: ";
+    cin>>szukaneImie;
+
+    for (int i=0; i<adresaci.size(); ++i){
+        if (adresaci[i].pobierzImie()==szukaneImie){
+            adresaci[i].wyswietlDaneAdresata();
+            znalezionoAdresata = true;
+        }
+    }
+
+    if(!znalezionoAdresata)
+        cout << endl << "Nie znaleziono adresatow o podanym imieniu" << endl;
+
+    cout << endl;
+    system("pause");
+}
+
+void AdresatMenadzer::znajdzAdresataPoNazwisku(){
+    string szukaneNazwisko = "";
+    bool znalezionoAdresata = false;
+
+    system("cls");
+    cout << " >>> WYSZUKIWANIE ADRESATA PO NAZWISKU <<<" << endl << endl;
+    cout << "Wprowadz wyszukiwane nazwisko: ";
+    cin>>szukaneNazwisko;
+
+    for (int i=0; i<adresaci.size(); ++i){
+        if (adresaci[i].pobierzNazwisko()==szukaneNazwisko){
+            adresaci[i].wyswietlDaneAdresata();
+            znalezionoAdresata = true;
+        }
+    }
+
+    if(!znalezionoAdresata)
+        cout << endl << "Nie znaleziono adresatow o podanym imieniu" << endl;
+
+    cout << endl;
+    system("pause");
+}

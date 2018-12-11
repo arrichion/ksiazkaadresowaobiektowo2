@@ -31,8 +31,16 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
     adresatMenadzer->wyswietlWszystkichAdresatow();
 }
 
-void  KsiazkaAdresowa::wylogowanieUzytkownika(){
+void KsiazkaAdresowa::wylogowanieUzytkownika(){
     uzytkownikMenadzer.wylogowanieUzytkownika();
     delete adresatMenadzer;
     adresatMenadzer = NULL;
+}
+
+void KsiazkaAdresowa::znajdzAdresataPoImieniu(){
+    adresatMenadzer->znajdzAdresataPoImieniu();
+}
+
+void KsiazkaAdresowa::znajdzAdresataPoNazwisku(){
+    adresatMenadzer->znajdzAdresataPoNazwisku();
 }
