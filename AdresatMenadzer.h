@@ -9,20 +9,24 @@
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
+#include "Menu.h"
 
 using namespace std;
 
 class AdresatMenadzer{
     const int idZalogowanegoUzytkownika;
     PlikZAdresatami plikZAdresatami;
+    Menu menu;
 
     vector <Adresat> adresaci;
 
     Adresat podajDaneNowegoAdresata();
+    int podajIdWybranegoAdresata();
+    void zaktualizujDaneEdytowanegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
 
 public:
-    AdresatMenadzer(string nazwaPlikuZAdresatami, int IDZALOGOWANEGOUZYTKOWNIKA)
-        : plikZAdresatami(nazwaPlikuZAdresatami), idZalogowanegoUzytkownika(IDZALOGOWANEGOUZYTKOWNIKA){
+    AdresatMenadzer(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int IDZALOGOWANEGOUZYTKOWNIKA)
+        : plikZAdresatami(nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami), idZalogowanegoUzytkownika(IDZALOGOWANEGOUZYTKOWNIKA){
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     };
 
@@ -30,6 +34,8 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    int usunAdresata();
+    void edytujAdresata();
 };
 
 #endif

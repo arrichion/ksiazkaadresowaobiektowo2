@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "AdresaciTymczasowi");
 
     while (true)
     {
@@ -45,10 +45,10 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                //ksiazkaAdresowa.usunAdresata();
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
-                //ksiazkaAdresowa.edytujAdresata();
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

@@ -14,10 +14,11 @@ class KsiazkaAdresowa{
     AdresatMenadzer *adresatMenadzer;
     Menu menu;
     const string nazwaPlikuZAdresatami;
+    const string nazwaTymczasowegoPlikuZAdresatami;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string NAZWAPLIKUZADRESATAMI)
-        : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string NAZWAPLIKUZADRESATAMI, string NAZWATYMCZASOWEGOPLIKUZADRESATAMI)
+        : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI), nazwaTymczasowegoPlikuZAdresatami(NAZWATYMCZASOWEGOPLIKUZADRESATAMI){};
 
     ~KsiazkaAdresowa(){
         delete adresatMenadzer;
@@ -35,6 +36,8 @@ public:
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
+    int usunAdresata();
+    void edytujAdresata();
 };
 
 #endif

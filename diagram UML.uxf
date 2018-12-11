@@ -31,13 +31,15 @@ fontsize=10
       <x>0</x>
       <y>0</y>
       <w>230</w>
-      <h>240</h>
+      <h>290</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
 - uzytkownikMendzer: UzytkownikMenadzer 
 - adresatMenadzer: AdrestaMenadzer
-- nazwaPlikuZAdrestaami: const string
+- nazwaPlikuZAdrestaami: string
+- nazwaPlikuTymczasowegoZAdrestaami: string
+- menu: Menu
 --
 + KsiazkaAdresowa()
 + ~KsiazkaAdresowa()
@@ -49,18 +51,20 @@ fontsize=10
 + dodajAdresata: int
 + wyswietlWszystkichAdresatow: void
 + znajdzAdresataPoImieniu(): void
-+ znajdzAdresataPoNazwisku(): void
-+ wybierzOpcjeZMenuGlownego(): char
++ wyszukajAdresatowPoImieniu(): void
++ wyszukajAdresatowPoNazwisku(): void
 + wybierzOpcjeZMenuUzytkownika(): char
 + pobierzIdZalogowanegoUzytkownika(): int
++ usunAdresata(): int
++ edytujAdresata(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>530</y>
+      <x>20</x>
+      <y>550</y>
       <w>170</w>
       <h>220</h>
     </coordinates>
@@ -81,14 +85,14 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>260</y>
+      <x>600</x>
+      <y>280</y>
       <w>380</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- nazwaPlikuZUzytkownikami: const string
+- nazwaPlikuZUzytkownikami: string
 --
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku(): void
@@ -116,7 +120,9 @@ fontsize=10
 + wczytajLinie(): string
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst): string
 + pobierzLiczbe(string tekst, int pozycjaZnaku): string
-+ konwersjaStringNaInt(string liczba): int</panel_attributes>
++ konwersjaStringNaInt(string liczba): int
++ wczytajZnak(): char
++ wczytajLiczbeCalkowita(): int;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -141,8 +147,8 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>260</y>
+      <x>240</x>
+      <y>280</y>
       <w>320</w>
       <h>250</h>
     </coordinates>
@@ -173,8 +179,8 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>530</y>
+      <x>240</x>
+      <y>550</y>
       <w>320</w>
       <h>250</h>
     </coordinates>
@@ -182,13 +188,19 @@ fontsize=10
 --
 - adresaci: vector&lt;Adresat&gt;
 - plikZAdresatami: PlikZAdresatami
-- idZalogowanegoUzytkownika: const int
+- idZalogowanegoUzytkownika: int
+- menu: Menu
 --
 + dodajAdresata(): int
 + wyswietlWszystkichAdresatow(): void
-+ znajdzAdresataPoImieniu(): void
-+ znajdzAdresataPoNazwisku(): void
++ wyszukajAdresatowPoImieniu(): void
++ wyszukajAdresatowPoNazwisku(): void
++ usunAdresata(): int
++ edytujAdresata(): void
 - podajDaneNowegoAdresata(): Adresat 
+- podajIdWybranegoAdresata(): int
+- zaktualizujDaneEdytowanegoAdresata(): void
+
 
 
  
@@ -198,19 +210,25 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
+      <x>600</x>
       <y>530</y>
       <w>380</w>
-      <h>220</h>
+      <h>280</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- nazwaPlikuZAdresatami: const string
+- nazwaPlikuZAdresatami: string
+- nazwaTymczasowegoPlikuZAdresatami: string
+- idOstatniegoAdresata: int
 --
 + PlikZAdresatami()
 + dopiszAdresataDoPliku(): void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector&lt;Adresat&gt;
-+ pobierzIdOstatniegoAdresata(): int;
++ pobierzIdOstatniegoAdresata(): int
++ zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(): string
++ usunWybranaLinieWPliku(int numerUsuwanejLinii): void
++ zwrocNumerLiniiSzukanegoAdresata(int idAdresata): int
++ edytujWybranaLinieWPliku(): void
 - czyPlikJestPusty(): bool  
 - zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(): string 
 - pobierzDaneAdresata(): Adresat;
@@ -223,7 +241,7 @@ fontsize=10
     <id>UMLClass</id>
     <coordinates>
       <x>20</x>
-      <y>280</y>
+      <y>300</y>
       <w>170</w>
       <h>220</h>
     </coordinates>
