@@ -146,7 +146,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii){
     int numerWczytanejLinii = 1;
 
     odczytywanyPlikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
-    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+    tymczasowyPlikTekstowy.open(dodajTymczasowyDoNazwyPlikuzAdresatami().c_str(), ios::out | ios::app);
 
     if (odczytywanyPlikTekstowy.good() == true && numerUsuwanejLinii != 0)
     {
@@ -167,7 +167,7 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int numerUsuwanejLinii){
         tymczasowyPlikTekstowy.close();
 
         usunOdczytywanyPlik(nazwaPlikuZAdresatami);
-        zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(nazwaTymczasowegoPlikuZAdresatami, nazwaPlikuZAdresatami);
+        zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(dodajTymczasowyDoNazwyPlikuzAdresatami(), nazwaPlikuZAdresatami);
     }
 }
 
@@ -220,7 +220,7 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
     int numerWczytanejLinii = 1;
 
     odczytywanyPlikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
-    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+    tymczasowyPlikTekstowy.open(dodajTymczasowyDoNazwyPlikuzAdresatami().c_str(), ios::out | ios::app);
 
     if (odczytywanyPlikTekstowy.good() == true)
     {
@@ -246,8 +246,14 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
         tymczasowyPlikTekstowy.close();
 
         usunOdczytywanyPlik(nazwaPlikuZAdresatami);
-        zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(nazwaTymczasowegoPlikuZAdresatami, nazwaPlikuZAdresatami);
+        zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(dodajTymczasowyDoNazwyPlikuzAdresatami(), nazwaPlikuZAdresatami);
     }
+}
+
+string PlikZAdresatami::dodajTymczasowyDoNazwyPlikuzAdresatami(){
+    string zmienianaNazwa = nazwaPlikuZAdresatami;
+
+    return zmienianaNazwa.insert(nazwaPlikuZAdresatami.length()-4, "Tymczasowy");
 }
 
 
