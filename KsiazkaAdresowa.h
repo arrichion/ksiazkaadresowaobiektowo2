@@ -18,10 +18,13 @@ class KsiazkaAdresowa{
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string NAZWAPLIKUZADRESATAMI, string NAZWATYMCZASOWEGOPLIKUZADRESATAMI)
-        : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI), nazwaTymczasowegoPlikuZAdresatami(NAZWATYMCZASOWEGOPLIKUZADRESATAMI){};
+        : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI), nazwaTymczasowegoPlikuZAdresatami(NAZWATYMCZASOWEGOPLIKUZADRESATAMI){
+            adresatMenadzer = NULL;
+        };
 
     ~KsiazkaAdresowa(){
         delete adresatMenadzer;
+        adresatMenadzer = NULL;
     }
 
     void rejestracjaUzytkownika();
