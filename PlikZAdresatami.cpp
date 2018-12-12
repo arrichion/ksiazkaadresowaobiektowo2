@@ -1,7 +1,7 @@
 #include "PlikZAdresatami.h"
 
 bool PlikZAdresatami::czyPlikJestPusty(){
-    fstream plikTekstowy;
+    fstream plikTekstowy(nazwaPlikuZAdresatami.c_str());
 
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
@@ -24,7 +24,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat){
         }
         else
         {
-            plikTekstowy << endl << liniaZDanymiAdresata ;
+            plikTekstowy << endl << liniaZDanymiAdresata;
         }
         ++idOstatniegoAdresata;
         plikTekstowy.close();

@@ -64,7 +64,7 @@ vector <Uzytkownik> UzytkownikMenadzer::wczytajUzytkownikowZPliku(){
     return uzytkownicy;
 }
 
-int UzytkownikMenadzer::logowanieUzytkownika(){
+void UzytkownikMenadzer::logowanieUzytkownika(){
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
@@ -85,17 +85,17 @@ int UzytkownikMenadzer::logowanieUzytkownika(){
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    return idZalogowanegoUzytkownika;
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika(){
