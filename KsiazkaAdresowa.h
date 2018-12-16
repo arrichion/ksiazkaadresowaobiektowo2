@@ -14,7 +14,6 @@ class KsiazkaAdresowa{
     AdresatMenadzer *adresatMenadzer;
     Menu menu;
     const string nazwaPlikuZAdresatami;
-    const string nazwaTymczasowegoPlikuZAdresatami;
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string NAZWAPLIKUZADRESATAMI)

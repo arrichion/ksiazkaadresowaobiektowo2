@@ -25,7 +25,7 @@ class AdresatMenadzer{
     void zaktualizujDaneEdytowanegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
 
 public:
-    AdresatMenadzer(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int IDZALOGOWANEGOUZYTKOWNIKA)
+    AdresatMenadzer(string nazwaPlikuZAdresatami, int IDZALOGOWANEGOUZYTKOWNIKA)
         : plikZAdresatami(nazwaPlikuZAdresatami), idZalogowanegoUzytkownika(IDZALOGOWANEGOUZYTKOWNIKA){
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     };
